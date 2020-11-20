@@ -1,0 +1,13 @@
+<ActionBar title="Forms" class="appTitle"></ActionBar>
+
+<StackLayout orientation="vertical" verticalAlignment="top">
+    <StackLayout orientation="horizontal">
+        <label text="Introduce your name"></label>
+    </StackLayout>
+ 
+    <!-- input no vinculat-->
+    <TextField hint="Enter your name"></TextField>
+    <!--input vinculat-->
+	<Button class="btn" text="Tap me!" (tap)="clickMe()"></Button>
+    <Label [nsRouterLink]="['/gats','Gina']" text=" Inici "></Label>
+</StackLayout>

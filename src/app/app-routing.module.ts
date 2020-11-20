@@ -4,11 +4,13 @@ import { NativeScriptRouterModule } from "@nativescript/angular";
 
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
+import { FormsComponent } from "./forms/form.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/items", pathMatch: "full" },
+    { path: "", redirectTo: "/forms", pathMatch: "full" },
     { path: "items", component: ItemsComponent },
-    { path: "item/:id", component: ItemDetailComponent }
+    { path: "item/:id", component: ItemDetailComponent },
+    { path: "forms", component: FormsComponent }
 ];
 
 @NgModule({
