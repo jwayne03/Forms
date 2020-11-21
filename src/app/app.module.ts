@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { FormsComponent } from "./forms/form.component";
+import { CreditsComponent } from "./credits/credits.component";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsComponent } from "./forms/form.component";
         AppComponent,
         ItemsComponent,
         ItemDetailComponent,
-        FormsComponent
+        FormsComponent,
+        CreditsComponent
     ],
     providers: [],
     schemas: [
