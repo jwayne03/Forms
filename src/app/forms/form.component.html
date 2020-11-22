@@ -1,13 +1,20 @@
 <ActionBar title="Forms" class="appTitle"></ActionBar>
 
 <StackLayout orientation="vertical" verticalAlignment="top">
-    <StackLayout orientation="horizontal">
+    <StackLayout orientation="vertical">
         <label class="h2" text="Introduce your name"></label>
+        <TextField hint="Enter your name" class="h3"></TextField>
     </StackLayout>
- 
-    <TextField hint="Enter your name" class="h3"></TextField>
-   
-	<Button text="Start" (tap)="clickMe()"></Button>
-    <Button text="Credits" (tap)="clickMe()"></Button>
-    <Label [nsRouterLink]="['/gats','Gina']" text=" Inici "></Label>
+    <StackLayout>
+        <Label class="h3" text="Images:"></Label>
+        <ListPicker [items]="themes" class="picker" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker>
+    </StackLayout>
+    <StackLayout>
+        <Label class="h3" text="Number of images:"></Label>
+        <ListPicker [items]="images" class="picker" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChangedIndex($event)"> 
+        </ListPicker>
+    </StackLayout>
+	<Button text="Start" (tap)="onClickStart()"></Button>
+    <Button text="Credits" (tap)="onClickCredits()"></Button>
+
 </StackLayout>

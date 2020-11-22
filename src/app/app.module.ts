@@ -7,8 +7,7 @@ import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { FormsComponent } from "./forms/form.component";
 import { CreditsComponent } from "./credits/credits.component";
-
-
+import { StartComponent } from "./start/start.component";
 @NgModule({
     bootstrap: [
         AppComponent
@@ -22,7 +21,8 @@ import { CreditsComponent } from "./credits/credits.component";
         ItemsComponent,
         ItemDetailComponent,
         FormsComponent,
-        CreditsComponent
+        CreditsComponent,
+        StartComponent
     ],
     providers: [],
     schemas: [

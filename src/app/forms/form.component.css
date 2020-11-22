@@ -11,3 +11,12 @@
 @import '~@nativescript/theme/css/purple.css';
 @import '~@nativescript/theme/css/ruby.css';
 @import '~@nativescript/theme/css/sky.css'; */
+
+.picker {
+    background-color: lightgrey;
+    color:black;
+    border-color: grey;
+    width: 200;
+    height: 100;
+    vertical-align: middle;
+}

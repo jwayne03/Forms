@@ -6,13 +6,15 @@ import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { FormsComponent } from "./forms/form.component";
 import { CreditsComponent } from "./credits/credits.component";
+import { StartComponent } from "./start/start.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/forms", pathMatch: "full" },
     { path: "items", component: ItemsComponent },
     { path: "item/:id", component: ItemDetailComponent },
     { path: "forms", component: FormsComponent },
-    { path: "credits", component: CreditsComponent }
+    { path: "credits", component: CreditsComponent },
+    { path: "start", component: StartComponent }
 ];
 
 @NgModule({
