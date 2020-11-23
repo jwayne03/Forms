@@ -9,9 +9,13 @@ import { ListPicker } from '@nativescript/core';
 })
 
 export class FormsComponent {
-    nomForm = '';
-    public themes: Array<string> = [];
-    public images: Array<string> = [];
+    username = '';
+    public themes: Array<string> = ["Anime", "Programming"];
+    public images: Array<number> = [2, 3, 4];
+
+    constructor(
+        private _router: Router,
+        private _activRoute: ActivatedRoute) { }
 
     public onSelectedIndexChanged(args) {
         const picker = <ListPicker>args.object;
@@ -20,18 +24,16 @@ export class FormsComponent {
     public onSelectedIndexChangedIndex(args) {
         const picker = <ListPicker>args.object;
     }
+
     onClickStart() {
         this._router.navigate(
-            ['/start', { User: 'wayne' }]
+            ['/start', { user: 'wayne' }]
         );
     }
 
     onClickCredits() {
         this._router.navigate(
-            ['/credits', { User: 'wayne' }]
+            ['/credits', { user: 'wayne' }]
         );
     }
-
-    constructor(private _router: Router,
-        private _activRoute: ActivatedRoute) { }
 }
