@@ -1,1 +1,15 @@
 <ActionBar title="Start" class="appTitle"></ActionBar>
+
+<StackLayout *ngFor="let programming of program; index as i">
+    <ng-container *ngIf = "i>=number : showImages"></ng-container> 
+    <ng-template #showImages>
+    <Image src="{{programming.route}}" style="width:500px; height:500px"></Image>
+    <Label text="{{programming.name}}"></Label>
+</StackLayout>
+
+<StackLayout>
+    <Label text="{{information}}"></Label>
+    <Label text="username"></Label>
+    <Label text="theme"></Label>
+    <Label text="number"></Label>
+</StackLayout>
