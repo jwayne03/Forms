@@ -1,6 +1,6 @@
 export class Start {
-    route: string = "";
-    constructor(name:string = "") {
-        this.route = name;
+    route: string;
+    constructor(route: string) {
+        this.route = route;
     }
 }

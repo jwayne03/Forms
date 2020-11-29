@@ -1,18 +1,20 @@
 <ActionBar title="Start" class="appTitle"></ActionBar>
 
 <StackLayout>
-    <StackLayout orientation="vertical" *ngFor="let image of images; index as i">
-        <ng-container *ngIf = "i>=number; else showImages"></ng-container> 
-        <ng-template #showImages>
-        <Image src="{{image.route}}" style="width:500px; height:500px"></Image>
-        </ng-template>
-        
-    </StackLayout>
+  <StackLayout>
+    <Label class="h2 text-center" text="Information"></Label>
+    <Label class="h3 text-center" [text]="username"></Label>
+    <Label class="h3 text-center" [text]="theme"></Label>
+    <Label class="h3 text-center" [text]="number"></Label>
+  </StackLayout>
 
-    <StackLayout>
-        <Label text="information"></Label>
-        <!--<Label [text]="username"></Label>-->
-        <Label [text]="theme"></Label>
-        <Label [text]="number"></Label>
-    </StackLayout>
+  <StackLayout *ngFor="let image of images; index as i">
+    <ng-container *ngIf="i >= number; else showImages"></ng-container>
+    <ng-template #showImages>
+      <Image
+        src="{{ image.route }}"
+        style="width: 500px; height: 500px"
+      ></Image>
+    </ng-template>
+  </StackLayout>
 </StackLayout>
