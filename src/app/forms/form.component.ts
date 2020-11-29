@@ -9,7 +9,9 @@ import { ListPicker } from '@nativescript/core';
 })
 
 export class FormsComponent {
-    username = '';
+    username:string;
+    themeimage = "";
+    number = 0;
     public themes: Array<string> = ["Anime", "Programming"];
     public images: Array<number> = [2, 3, 4];
 
@@ -19,21 +21,23 @@ export class FormsComponent {
 
     public onSelectedIndexChanged(args) {
         const picker = <ListPicker>args.object;
+        this.themeimage = this.themes[picker.selectedIndex];
     }
 
     public onSelectedIndexChangedIndex(args) {
         const picker = <ListPicker>args.object;
+        this.number = this.images[picker.selectedIndex];
     }
 
     onClickStart() {
         this._router.navigate(
-            ['/start', { user: 'wayne' }]
+            ['/start', { user: this.username, theme:this.themeimage, numberOfImages: this.number }]
         );
     }
 
     onClickCredits() {
         this._router.navigate(
-            ['/credits', { user: 'wayne' }]
+            ['/credits', { user: this.username }]
         );
     }
 }

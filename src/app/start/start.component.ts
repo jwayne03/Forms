@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { start } from '@nativescript/core/profiling';
 import { Start } from './start';
 
 @Component({
@@ -11,6 +10,7 @@ import { Start } from './start';
 
 export class StartComponent {
     information = "Programming";
+    username = "";
     theme = "";
     number = "0";
     images = []
@@ -21,20 +21,15 @@ export class StartComponent {
     
     ngOnInit(): void {
         this.theme = this._activRoute.snapshot.params.theme;
-        this.number = this._activRoute.snapshot.params.number;
-
-        this.theme ? this.filter("Programming") : "Anime";
-    }
-
-    private filter(params) {
-        if (params == "Programming") {
+        this.number = this._activRoute.snapshot.params.numberOfImages;
+        this.username = this._activRoute.snapshot.params.user;
+        
+        if (this.theme == "Programming") {
             this.programmingImage();
-        }
-
-        if (params == "Anime") {
+        } else {
             this.animeImage();
         }
-    }
+    }   
 
     private programmingImage() {
         this.images = [
