@@ -16,6 +16,10 @@ export class StartComponent {
 
     constructor(private _router: Router, private _activRoute: ActivatedRoute) {}
 
+    onBackActivity() {
+        this._router.navigate(["/forms"]);
+    }
+
     ngOnInit(): void {
         this.username = this._activRoute.snapshot.params.user;
         this.theme = this._activRoute.snapshot.params.theme;

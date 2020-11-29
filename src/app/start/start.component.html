@@ -1,20 +1,23 @@
-<ActionBar title="Start" class="appTitle"></ActionBar>
+<ActionBar title="Start" class="appTitle action-bar"></ActionBar>
 
-<StackLayout>
+<ScrollView class="body">
   <StackLayout>
-    <Label class="h2 text-center" text="Information"></Label>
-    <Label class="h3 text-center" [text]="username"></Label>
-    <Label class="h3 text-center" [text]="theme"></Label>
-    <Label class="h3 text-center" [text]="number"></Label>
+    <StackLayout>
+      <Label class="h2 text-center" text="Information"></Label>
+      <Label class="h3 text-center" [text]="username"></Label>
+      <Label class="h3 text-center" [text]="theme"> themes picked</Label>
+      <Label class="h3 text-center" [text]="number"> images picked</Label>
+    </StackLayout>
+    <Button
+      class="btn btn-rounded-lg"
+      text="Back"
+      (tap)="onBackActivity()"
+    ></Button>
+    <StackLayout *ngFor="let image of images; index as i">
+      <ng-container *ngIf="i >= number; else showImages"></ng-container>
+      <ng-template #showImages>
+        <Image src="{{ image.route }}"></Image>
+      </ng-template>
+    </StackLayout>
   </StackLayout>
-
-  <StackLayout *ngFor="let image of images; index as i">
-    <ng-container *ngIf="i >= number; else showImages"></ng-container>
-    <ng-template #showImages>
-      <Image
-        src="{{ image.route }}"
-        style="width: 500px; height: 500px"
-      ></Image>
-    </ng-template>
-  </StackLayout>
-</StackLayout>
+</ScrollView>

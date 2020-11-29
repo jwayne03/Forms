@@ -1,33 +1,43 @@
-<ActionBar title="Forms" class="appTitle"></ActionBar>
+<ActionBar title="Forms" class="appTitle action-bar"></ActionBar>
 
-<StackLayout orientation="vertical" verticalAlignment="top">
-  <StackLayout orientation="vertical">
-    <label class="h2 text-center" text="Introduce your name"></label>
-    <TextField
-      hint="Enter your name"
-      class="h3"
-      [(ngModel)]="username"
-    ></TextField>
+<ScrollView>
+  <StackLayout orientation="vertical" verticalAlignment="top">
+    <StackLayout orientation="vertical">
+      <label class="h2 text-center" text="Introduce your name"></label>
+      <TextField
+        hint="Enter your name"
+        class="h3"
+        [(ngModel)]="username"
+      ></TextField>
+    </StackLayout>
+    <StackLayout>
+      <Label class="h2 text-center" text="Images:"></Label>
+      <ListPicker
+        [items]="themes"
+        class="picker"
+        selectedIndex="0"
+        (selectedIndexChange)="onSelectedIndexChanged($event)"
+      ></ListPicker>
+    </StackLayout>
+    <StackLayout>
+      <Label class="h2 text-center" text="Number of images:"></Label>
+      <ListPicker
+        [items]="images"
+        class="picker"
+        selectedIndex="0"
+        (selectedIndexChange)="onSelectedIndexChangedIndex($event)"
+      >
+      </ListPicker>
+    </StackLayout>
+    <Button
+      class="btn btn-rounded-lg"
+      text="Start"
+      (tap)="onClickStart()"
+    ></Button>
+    <Button
+      class="btn btn-rounded-lg"
+      text="Credits"
+      (tap)="onClickCredits()"
+    ></Button>
   </StackLayout>
-  <StackLayout>
-    <Label class="h3 text-center" text="Images:"></Label>
-    <ListPicker
-      [items]="themes"
-      class="picker"
-      selectedIndex="0"
-      (selectedIndexChange)="onSelectedIndexChanged($event)"
-    ></ListPicker>
-  </StackLayout>
-  <StackLayout>
-    <Label class="h3 text-center" text="Number of images:"></Label>
-    <ListPicker
-      [items]="images"
-      class="picker"
-      selectedIndex="0"
-      (selectedIndexChange)="onSelectedIndexChangedIndex($event)"
-    >
-    </ListPicker>
-  </StackLayout>
-  <Button text="Start" (tap)="onClickStart()"></Button>
-  <Button text="Credits" (tap)="onClickCredits()"></Button>
-</StackLayout>
+</ScrollView>
