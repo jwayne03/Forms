@@ -17,8 +17,10 @@ export class FormsComponent {
     constructor(private _router: Router, private _activRoute: ActivatedRoute) {}
 
     public onSelectedIndexChanged(args) {
+        
         const picker = <ListPicker>args.object;
         this.themeimage = this.themes[picker.selectedIndex];
+    
     }
 
     public onSelectedIndexChangedIndex(args) {
@@ -30,7 +32,7 @@ export class FormsComponent {
         this._router.navigate([
             "/start",
             {
-                username: this.username,
+                user: this.username,
                 theme: this.themeimage,
                 numberOfImages: this.number,
             },

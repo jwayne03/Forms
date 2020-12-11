@@ -9,9 +9,11 @@
         class="h3"
         [(ngModel)]="username"
       ></TextField>
+      <!-- <label [text]="username"></label> -->
     </StackLayout>
     <StackLayout>
       <Label class="h2 text-center" text="Images:"></Label>
+     
       <ListPicker
         [items]="themes"
         class="picker"

@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: "credits/:user", component: CreditsComponent },
     { path: "credits", component: CreditsComponent },
     { path: "start", component: StartComponent },
-    { path: "start/:username/:theme/:numberOfImages", component: StartComponent }
+    { path: "start/:user/:theme/:numberOfImages", component: StartComponent }
 ];
 
 @NgModule({
