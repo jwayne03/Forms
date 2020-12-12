@@ -9,7 +9,7 @@ import { Start } from "./start";
 })
 export class StartComponent implements OnInit {
     information = "";
-    username = "ii";
+    username = "";
     theme = "";
     number = "0";
     images = [];
